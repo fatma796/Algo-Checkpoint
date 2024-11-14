@@ -1,0 +1,57 @@
+ALGORITHM Count_Countsentencelength,words,and vowels
+VAR
+    str:STRING  // This VAR is used to store the sentence.
+    i:INTEGER   // This VAR is used as an index for the loop.
+    NB_C,NB_V:INTEGER:=0  // This VAR will count the number for characters and vowels in the sentence.
+    NB_W:INTEGER:=1    // This VAR will count the number of words in the sentence. 
+BEGIN
+    write("enter a sentence")
+    read(str)
+WHILE (str(i) <> ".") DO // This loop will continue until the character is a period.
+    NB_C= NB_C+1   // We add the Character counter by 1 for each character found.
+// Check if the current character is a space
+IF    (str(i)= " ") THEN  
+    NB_W=NB_W+1   // We add the Words counter by 1 if we found a space.
+END_IF
+// Check if the current character is a vowel (a, e, i, u, o)
+IF (str(i)= ("a","e","i","u","o")) THEN 
+    NB_V=NB_V+1   // We add the vowels counter by 1 if we found a vowel.
+END_IF
+    i++
+END_WHILE
+    write(NB_C)
+    write(NB_V)
+    write(NB_W)
+END
+
+
+EXAMPLE : "HELLO WORLD."
+LENGTH = 11 ( 
+For "H", length becomes 1.
+For "e", length becomes 2.
+For "l", length becomes 3.
+For "l", length becomes 4.
+For "o", length becomes 5.
+For " ", length becomes 6.
+For "w", length becomes 7.
+For "o", length becomes 8.
+For "r", length becomes 9.
+For "l", length becomes 10.
+For "d", length becomes 11.)
+(WORD 1 : "HELLO") + SPACE + (WORD 2 : "WORLD")
+WORDS = 2 ( The number of words counted based on spaces)
+VOWELS = 3 ("E" ,"O" , "O")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
